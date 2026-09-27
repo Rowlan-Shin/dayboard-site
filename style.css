@@ -1,0 +1,54 @@
+:root {
+  --bg: #f5f6fa;
+  --surface: #ffffff;
+  --text: #1c2033;
+  --muted: #5b6178;
+  --line: #dfe2ec;
+  --accent: #3a5bd9;
+  --accent-soft: #e8edff;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #11131d;
+    --surface: #1a1d2b;
+    --text: #e8eaf3;
+    --muted: #a3a9c0;
+    --line: #2c3146;
+    --accent: #8fa8ff;
+    --accent-soft: #232a47;
+    color-scheme: dark;
+  }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Pretendard", "Apple SD Gothic Neo", "Malgun Gothic", "Segoe UI", system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+main { max-width: 760px; margin: 0 auto; padding: 48px 16px 64px; }
+header.site { display: flex; align-items: center; gap: 14px; margin-bottom: 28px; }
+header.site img { width: 56px; height: 56px; }
+header.site h1 { margin: 0; font-size: 30px; line-height: 1.2; }
+header.site p { margin: 2px 0 0; color: var(--muted); }
+h2 { font-size: 20px; margin: 36px 0 10px; }
+h3 { font-size: 17px; margin: 24px 0 6px; }
+p, li { color: var(--text); }
+ul { padding-left: 22px; }
+li { margin: 4px 0; }
+a { color: var(--accent); }
+code { font-family: Consolas, "Cascadia Mono", monospace; font-size: .92em; background: var(--accent-soft); padding: 1px 5px; border-radius: 5px; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 20px 22px; margin: 18px 0; }
+.muted { color: var(--muted); }
+.links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+.links a { display: inline-block; padding: 8px 14px; border-radius: 10px; border: 1px solid var(--line); background: var(--surface); text-decoration: none; }
+.links a.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+@media (prefers-color-scheme: dark) { .links a.primary { color: #0e1120; } }
+footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; }
+section[lang="en"] { margin-top: 40px; }

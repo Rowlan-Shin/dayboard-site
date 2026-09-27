@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DayBoard 개인정보처리방침</title>
+  <meta name="description" content="DayBoard가 Google 캘린더 데이터를 어떻게 다루는지 설명합니다.">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <header class="site">
+    <img src="icon.svg" alt="" width="56" height="56">
+    <div>
+      <h1>개인정보처리방침</h1>
+      <p><a href="./">DayBoard</a> · 시행일 2026년 9월 28일</p>
+    </div>
+  </header>
+
+  <h2>1. 개요</h2>
+  <p>DayBoard(이하 "앱")는 Windows용 개인 일정 관리 앱입니다. 앱은 사용자 PC에서만 실행되며, 개발자가 운영하는 서버가 없습니다.
+    앱이 다루는 데이터는 사용자 PC와 사용자가 직접 연결한 서비스(Google, Apple iCloud) 사이에서만 오갑니다.</p>
+
+  <h2>2. 접근하는 Google 사용자 데이터</h2>
+  <p>사용자가 앱에서 'Google 연결'을 눌러 Google 동의 화면에서 허용하면, 앱은 Google 캘린더 권한
+    (<code>https://www.googleapis.com/auth/calendar</code>)으로 다음 데이터에 접근합니다.</p>
+  <ul>
+    <li>캘린더 목록: 캘린더 이름, 색, 접근 권한, 기본 캘린더 여부</li>
+    <li>일정: 제목, 시작·종료 시간, 종일 여부, 장소, 설명, 반복 규칙과 예외, 색, 그리고 Google이 보내 주는 일정 원본 데이터</li>
+    <li>연결한 계정의 기본 캘린더 ID(보통 Google 계정 이메일 주소) — 설정 화면에 연결된 계정으로 표시합니다</li>
+  </ul>
+
+  <h2>3. 사용 목적</h2>
+  <p>위 데이터는 다음 목적에만 사용합니다.</p>
+  <ul>
+    <li>바탕화면 위젯에 캘린더와 일정을 표시하고 검색하기</li>
+    <li>사용자가 앱에서 직접 한 변경(일정 만들기·고치기·옮기기·지우기, 캘린더 만들기·이름과 색 바꾸기·삭제)을 사용자의 Google 캘린더에 반영하기</li>
+    <li>사용자가 정한 규칙에 따라 PC에서 일정 알림 표시하기</li>
+  </ul>
+  <p>광고, 프로필 분석, 신용 평가, AI·머신러닝 모델 학습 등 그 밖의 목적으로는 사용하지 않습니다.</p>
+
+  <h2>4. 저장과 보호</h2>
+  <ul>
+    <li>캘린더와 일정 사본은 사용자 PC의 앱 데이터 폴더(<code>%APPDATA%\dayboard</code>)에 있는 로컬 데이터베이스에 저장됩니다.</li>
+    <li>Google 로그인 토큰과, 사용자가 직접 입력한 경우의 OAuth 클라이언트 정보는 Windows 데이터 보호 API(DPAPI)로 암호화해 같은 폴더에 저장합니다.</li>
+    <li>앱은 Google 서버(및 사용자가 연결한 경우 iCloud 서버)와 직접 HTTPS로 통신합니다. 개발자나 제3자의 서버로 데이터를 보내지 않으며,
+      사용 통계·분석·광고 모듈을 포함하지 않습니다.</li>
+  </ul>
+
+  <h2>5. 제3자 제공과 열람</h2>
+  <p>Google 사용자 데이터를 판매하거나 제3자에게 제공·전송하지 않습니다. 데이터는 사용자 PC 안에만 있으므로 개발자를 포함해 다른 사람이 열람하지 않습니다.</p>
+
+  <h2>6. Google API 서비스 사용자 데이터 정책 준수</h2>
+  <p>DayBoard가 Google API에서 받은 정보를 사용하고 다른 앱으로 전송하는 방식은
+    <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API 서비스 사용자 데이터 정책</a>(제한적 사용 요구사항 포함)을 따릅니다.</p>
+
+  <h2>7. 보관 기간과 삭제</h2>
+  <ul>
+    <li>데이터는 사용자가 연결을 해제하거나 앱 데이터를 지울 때까지 사용자 PC에 남습니다.</li>
+    <li>앱의 설정 → 계정에서 'Google 연결 해제'를 누르면 이 PC의 Google 캘린더·일정 사본과 토큰을 지우고, Google에 토큰 폐기를 요청합니다.</li>
+    <li>Google 계정의 <a href="https://myaccount.google.com/connections">타사 앱 및 서비스</a> 화면에서 언제든 DayBoard의 접근 권한을 취소할 수 있습니다.</li>
+    <li>앱 데이터 폴더(<code>%APPDATA%\dayboard</code>)를 지우면 로컬에 저장된 모든 데이터가 삭제됩니다.</li>
+  </ul>
+
+  <h2>8. iCloud 연결</h2>
+  <p>사용자가 iCloud 캘린더를 연결하면 Apple ID와 앱 암호를 DPAPI로 암호화해 저장하고, iCloud 캘린더 서버(CalDAV)와만 직접 통신합니다.
+    이 경우에도 위 원칙이 똑같이 적용됩니다.</p>
+
+  <h2>9. 방침 변경</h2>
+  <p>이 방침이 바뀌면 이 페이지에 새 시행일과 함께 게시합니다.</p>
+
+  <h2>10. 문의</h2>
+  <p><a href="https://github.com/Rowlan-Shin/dayboard-site/issues">GitHub 이슈</a>로 문의해 주세요.</p>
+
+  <section lang="en" id="en">
+    <h2>Privacy Policy (English)</h2>
+    <p class="muted">Effective September 28, 2026</p>
+    <p>DayBoard is a personal Windows desktop calendar app. It runs only on your PC; the developer operates no server.</p>
+    <h3>Google user data</h3>
+    <p>Only after you choose "Connect Google" and grant consent, DayBoard uses the Google Calendar scope
+      (<code>https://www.googleapis.com/auth/calendar</code>) to read your calendar list (name, color, access role, primary flag),
+      your events (title, time, all-day flag, location, description, recurrence and exceptions, color, and the raw event data returned by Google),
+      and the ID of your primary calendar (usually your email address), which is shown in Settings as the connected account.</p>
+    <h3>How the data is used</h3>
+    <p>The data is used only to display and search your calendars and events on the desktop widget, to apply changes you make in the app
+      (creating, editing, moving and deleting events; creating, renaming, recoloring and deleting calendars) to your Google Calendar,
+      and to show local event reminders based on rules you set. It is not used for advertising, profiling, credit assessment,
+      or to train AI/ML models.</p>
+    <h3>Storage and security</h3>
+    <p>Calendar data is stored in a local database in <code>%APPDATA%\dayboard</code> on your PC. OAuth tokens, and client information if you enter it
+      yourself, are encrypted with the Windows Data Protection API (DPAPI). The app talks directly to Google (and iCloud, if you connect it) over HTTPS
+      and sends no data to the developer or any third party. It contains no analytics, telemetry or advertising components.</p>
+    <h3>Sharing</h3>
+    <p>Google user data is never sold, shared or transferred to third parties, and no person, including the developer, reads it.</p>
+    <h3>Limited Use</h3>
+    <p>DayBoard's use and transfer to any other app of information received from Google APIs will adhere to the
+      <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>,
+      including the Limited Use requirements.</p>
+    <h3>Retention and deletion</h3>
+    <p>Data stays on your PC until you disconnect or delete the app data. "Disconnect Google" in Settings → Accounts deletes the local copy
+      of your Google calendars, events and tokens and asks Google to revoke the token. You can also revoke access at any time at
+      <a href="https://myaccount.google.com/connections">myaccount.google.com/connections</a>, and deleting <code>%APPDATA%\dayboard</code>
+      removes all local data.</p>
+    <h3>Contact</h3>
+    <p>Please open a <a href="https://github.com/Rowlan-Shin/dayboard-site/issues">GitHub issue</a>.</p>
+  </section>
+
+  <footer><a href="./">DayBoard</a> · 개인 프로젝트</footer>
+</main>
+</body>
+</html>
